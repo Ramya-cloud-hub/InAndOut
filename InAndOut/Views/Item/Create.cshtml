@@ -1,0 +1,57 @@
+﻿
+@model InAndOut.Models.Item
+
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Add Item</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ItemName"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Borrower"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for=" Lender"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input asp-for="ItemName" class="form-control" />
+                        <span asp-validation-for="ItemName" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Borrower" class="form-control" />
+                        <span asp-validation-for="Borrower" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Lender" class="form-control" />
+                        <span asp-validation-for="Lender" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-3 row">
+                        <div class="col-4">
+                            <input class="btn btn-info w-75" type="submit" value="Create" />
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn-danger" asp-action="Index" value="Create">GoBackS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_validationScriptsPartial" />
+    }
+}
+
